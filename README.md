@@ -6,7 +6,7 @@ Some of the are based on the existing tutorial for boost::python from Joel de Gu
 <http://www.boost.org/doc/libs/1_46_1/libs/python/doc/tutorial/doc/html/index.html>
 but others are independent.
 
-## Prerequistites
+## Prerequisites
 
 + CMake (>= 2.8.3)
 + Boost (tested with 1.4.2, but should work with >= 1.3.2)
