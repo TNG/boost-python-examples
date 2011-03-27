@@ -7,3 +7,4 @@ LINK_LIBRARIES(boost_python)
 
 ADD_SUBDIRECTORY(01-HelloWorld)
 ADD_SUBDIRECTORY(02-ExposingClasses)
+ADD_SUBDIRECTORY(03-Constructors)
