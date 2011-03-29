@@ -1,3 +1,4 @@
 
 PYTHON_ADD_MODULE(hello hello.cpp)
-file(COPY hello.py DESTINATION .)
+FILE(COPY hello.py DESTINATION .)
+ADD_TEST(01-HelloWorld hello.py)
