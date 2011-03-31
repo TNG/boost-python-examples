@@ -1,3 +1,4 @@
 syntax: glob
 build
 README.html
+*.pyc
