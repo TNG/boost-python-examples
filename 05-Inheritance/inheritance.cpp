@@ -34,10 +34,24 @@ Base* factory()
 #include <boost/python.hpp>
 using namespace boost::python;
 
+struct BaseWrap : Base, wrapper<Base>
+{
+	virtual std::string name() const
+	{
+		if (override n = this->get_override("name"))
+			return n();
+		return Base::name();
+	}
+	std::string default_name() const
+	{
+		return this->Base::name();
+	}
+};
+
 BOOST_PYTHON_MODULE(inheritance)
 {
-	class_<Base>("Base")
-		.def("name", &Base::name)
+	class_<BaseWrap, boost::noncopyable>("Base")
+		.def("name", &Base::name, &BaseWrap::default_name)
 	;
 
 	class_<Derived, bases<Base> >("Derived")
