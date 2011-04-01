@@ -24,7 +24,7 @@ using namespace boost::python;
 BOOST_PYTHON_MODULE(operators)
 {
 	class_<NumberLike>("NumberLike")
-		.def(init<int>())
+		.def(init< optional<int> >())
 		.def(self + int())
 		.def("__str__", &NumberLike::toString)
 	;
