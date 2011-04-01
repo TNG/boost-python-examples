@@ -12,4 +12,5 @@ ADD_SUBDIRECTORY(02-ExposingClasses)
 ADD_SUBDIRECTORY(03-Constructors)
 ADD_SUBDIRECTORY(04-ClassMembers)
 ADD_SUBDIRECTORY(05-Inheritance)
+ADD_SUBDIRECTORY(06-VirtualFunctionsInPython)
 

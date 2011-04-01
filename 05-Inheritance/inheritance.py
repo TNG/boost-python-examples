@@ -5,10 +5,6 @@ import inheritance
 b = inheritance.Base()
 d = inheritance.Derived()
 
-class PythonDerived(inheritance.Base):
-	def name(self):
-		return "PythonDerived"
-
 inheritance.fb(b)
 inheritance.fb(d)
 
@@ -18,7 +14,4 @@ inheritance.fd(d)
 
 x = inheritance.factory()
 inheritance.fb(x)
-
-p = PythonDerived()
-inheritance.fb(p)
 
