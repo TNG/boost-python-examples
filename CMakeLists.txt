@@ -13,4 +13,5 @@ ADD_SUBDIRECTORY(03-Constructors)
 ADD_SUBDIRECTORY(04-ClassMembers)
 ADD_SUBDIRECTORY(05-Inheritance)
 ADD_SUBDIRECTORY(06-VirtualFunctionsInPython)
+ADD_SUBDIRECTORY(07-Operators)
 
