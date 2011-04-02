@@ -48,8 +48,6 @@ object getFunction(object python_namespace, std::string fname)
 
 void executePythonScript(const std::string& fname)
 {
-	initializeInterpreter();
-
 	// These searches cannot be put into some initializer function because one must not make these objects static.
 	object builtins_module = object( borrowed(PyImport_AddModule("__builtin__") ) );
 	object builtins_namespace=dict(borrowed( PyModule_GetDict( builtins_module.ptr() ) ) );
@@ -58,4 +56,9 @@ void executePythonScript(const std::string& fname)
 	builtins_execfile(fname.c_str(),main_namespace);
 }
 
-
+int main(int argc, char** argv)
+{
+	initializeInterpreter();
+	executePythonScript("embedding.py");
+	return 0;
+}

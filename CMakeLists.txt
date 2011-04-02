@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 2.8.3)
 FIND_PACKAGE(PythonInterp)
 FIND_PACKAGE(PythonLibs)
-FIND_PACKAGE(Boost)
+FIND_PACKAGE(Boost COMPONENTS python)
 
 ENABLE_TESTING()
 INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS} ${PYTHON_INCLUDE_DIRS})
-LINK_LIBRARIES(boost_python)
+LINK_LIBRARIES(${Boost_LIBRARIES}) # Deprecated but so convenient!
 
 ADD_SUBDIRECTORY(01-HelloWorld)
 ADD_SUBDIRECTORY(02-ExposingClasses)
