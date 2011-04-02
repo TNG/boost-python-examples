@@ -1,5 +1,6 @@
 
-PYTHON_ADD_MODULE(embedding embedding.cpp)
+PYTHON_ADD_MODULE(mymodule mymodule.cpp)
+ADD_EXECUTABLE(embedding embedding.cpp)
 FILE(COPY embedding.py DESTINATION .)
-ADD_TEST(12-Embedding embedding.py)
+ADD_TEST(12-Embedding embedding)
 
