@@ -9,3 +9,4 @@ print m
 n0 = NumberLike()
 m0 = n0 + 1
 print m0
+
