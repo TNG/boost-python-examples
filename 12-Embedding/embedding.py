@@ -1,11 +1,4 @@
 
-from mymodule import Base
+print "Object was %s."%precreated_object
 
-print dir()
-print "Hallo"
-print x
-
-b = Base()
-
-print b
 

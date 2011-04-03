@@ -19,7 +19,6 @@ void initializeInterpreter()
 	main_module = object( borrowed( PyImport_AddModule("__main__") ) );
 	handle<> mymodule( PyImport_ImportModule("mymodule") );
 	if (!mymodule) {
-		if (PyErr_Occurred()) PyErr_PrintEx(0);
 		throw_error_already_set() ;
 	}
 
@@ -59,14 +58,13 @@ void executePythonScript(const std::string& fname)
 
 int main(int argc, char** argv)
 {
-	initializeInterpreter();
 	try {
-		//object base = Base();
-		//PyDict_SetItem(main_namespace.ptr(), str("base").ptr(), base.ptr());
-		main_namespace["x"] = str("a");
+		initializeInterpreter();
+		main_namespace["precreated_object"] = Base("created on C++ side");
 		executePythonScript("embedding.py");
 	} catch (error_already_set& e) {
 		PyErr_PrintEx(0);
+		return 1;
 	}
 	return 0;
 }
