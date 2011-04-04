@@ -60,7 +60,30 @@ int main(int argc, char** argv)
 {
 	try {
 		initializeInterpreter();
-		executePythonScript("auto_instance.py");
+		exec_file( str("auto_instance.py"), main_namespace, main_namespace);
+		object BaseClass = main_namespace["Base"];
+		PyTypeObject* base_class = reinterpret_cast<PyTypeObject*>(BaseClass.ptr());
+		list keys = main_namespace.keys();
+		list items = main_namespace.items();
+		unsigned int n = len(items);
+		for (unsigned int i = 0; i<n ; ++i) {
+			object k = keys[i];
+			std::string ks = extract<std::string>(k); 
+			std::cout << i << " " << ks ;
+			object item = items[i];
+			PyObject* item_ptr = item.ptr();
+			if ( PyType_Check(item_ptr) != 0 ) {
+				std::cout << " Type";
+				PyTypeObject* type_obj = reinterpret_cast<PyTypeObject*>(item_ptr);
+				if ( ( type_obj != base_class) && ( PyType_IsSubtype( type_obj,  base_class) > 0) ) {
+					object obj = items[i]();
+					const Base& base_obj = extract<Base>(obj);
+					std::cout << base_obj.name() << std::endl;
+				}
+			}
+			std::cout << std::endl;
+		}
+			
 		// collect all classes derived from Base
 		// instantiate objects from each class
 		// call name on each object	

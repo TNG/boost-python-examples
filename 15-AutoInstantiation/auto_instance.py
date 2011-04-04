@@ -10,8 +10,4 @@ class PythonDerivedTwo(Base):
 	def __init__(self):
 		Base.__init__(self, "PythonDerivedTwo")
 
-# will be redone in C++
-p1 = PythonDerivedOne()
-p2 = PythonDerivedTwo()
-print p1, p2
 
