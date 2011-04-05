@@ -8,6 +8,7 @@ int main(int argc, char** argv)
 {
 	try {
 		Py_Initialize();
+		PyImport_AppendInittab((char*)"myextension", initmyextension);
 		object main_module = import("__main__");
 		dict main_namespace = extract<dict>(main_module.attr("__dict__"));
 		object myextension = import("myextension");
@@ -16,9 +17,9 @@ int main(int argc, char** argv)
 		exec_file( str("auto_instance.py"), main_namespace, main_namespace);
 		object BaseClass = myextension_namespace["Base"];
 		PyTypeObject* base_class = reinterpret_cast<PyTypeObject*>(BaseClass.ptr());
+
 		list keys = main_namespace.keys();
-		list items = main_namespace.items();
-		for (unsigned int i = 0; i<len(items) ; ++i) {
+		for (unsigned int i = 0; i<len(keys) ; ++i) {
 			object k = keys[i];
 			object item = main_namespace[k];
 			PyObject* item_ptr = item.ptr();

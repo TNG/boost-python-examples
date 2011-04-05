@@ -11,3 +11,4 @@ private:
 	std::string mName;
 };
 
+extern "C" void initmyextension();
