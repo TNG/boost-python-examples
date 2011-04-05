@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from mymodule import Base
+from myextension import Base
 
 class PythonDerivedOne(Base):
 	def __init__(self):
