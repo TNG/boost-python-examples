@@ -1,5 +1,5 @@
 
-PYTHON_ADD_MODULE(exceptions exceptions.cpp)
-FILE(COPY exceptions.py DESTINATION .)
-ADD_TEST(14-Exceptions exceptions.py)
+PYTHON_ADD_MODULE(myexceptions myexceptions.cpp)
+FILE(COPY myexceptions.py DESTINATION .)
+ADD_TEST(14-Exceptions myexceptions.py)
 
