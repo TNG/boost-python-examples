@@ -3,9 +3,9 @@
 
 struct World
 {
-    void set(std::string msg) { this->msg = msg; }
-    std::string greet() { return msg; }
-    std::string msg;
+    void set(std::string msg) { mMsg = msg; }
+    std::string greet() { return mMsg; }
+    std::string mMsg;
 };
 
 #include <boost/python.hpp>

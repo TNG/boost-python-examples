@@ -5,8 +5,7 @@ class Example {
 	Example(std::string n) : mName(n) {}
 	std::string mName;
 public:
-	std::string name()
-	{ return mName; }
+	std::string name() { return mName; }
 	static Example* factory()
 	{
 		return new Example("factory");
@@ -26,9 +25,11 @@ BOOST_PYTHON_MODULE(policies)
 {
 	class_<Example>("Example", no_init)
 		.def("__str__", &Example::name)
-		.def("factory", &Example::factory, return_value_policy<manage_new_object>())
+		.def("factory", &Example::factory, 
+			return_value_policy<manage_new_object>())
 		.staticmethod("factory")
-		.def("singleton", &Example::singleton, return_value_policy<reference_existing_object>())
+		.def("singleton", &Example::singleton, 
+			return_value_policy<reference_existing_object>())
 		.staticmethod("singleton")
 	;
 }	

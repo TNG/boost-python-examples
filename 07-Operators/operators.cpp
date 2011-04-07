@@ -4,19 +4,33 @@
 class NumberLike
 {
 public:
-	NumberLike(int n = 0) : _n(n) {}
+	NumberLike(int n = 0) : mN(n) {}
 	NumberLike& operator+= (int i)
-		{ _n += i; return *this; }
+	{ 
+		mN += i; 
+		return *this; 
+	}
 	std::string str() const
-		{ std::stringstream s; s << _n; return s.str(); }
+	{
+		std::stringstream s; 
+		s << mN; 
+		return s.str(); 
+	}
     std::string repr() const		
-		{ std::stringstream s; s << "NumberLike("<< _n<<")"; return s.str(); }
+	{
+		std::stringstream s; 
+		s << "NumberLike("<< mN << ")"; 
+		return s.str(); 
+	}
 private:
-	int _n;
+	int mN;
 };
 
 NumberLike operator+(NumberLike n, int i)
-	{ n += i; return n; };
+{ 
+	n += i; 
+	return n; 
+};
 
 #include <boost/python.hpp>
 using namespace boost::python;

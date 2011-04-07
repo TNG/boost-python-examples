@@ -4,8 +4,7 @@
 class Base 
 {
 public:
-	virtual std::string name() const
-	{ return "Base"; }
+	virtual std::string name() const { return "Base"; }
 	virtual ~Base() {}
 };
 

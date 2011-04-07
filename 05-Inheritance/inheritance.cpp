@@ -4,16 +4,14 @@
 class Base 
 {
 public:
-	virtual std::string name() const
-	{ return "Base"; }
+	virtual std::string name() const { return "Base"; }
 	virtual ~Base() {}
 };
 
 class Derived : public Base
 {
 public:
-	virtual std::string name() const
-	{ return "Derived"; }
+	virtual std::string name() const { return "Derived"; }
 };
 
 void fb(Base *b)

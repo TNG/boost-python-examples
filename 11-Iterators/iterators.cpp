@@ -4,8 +4,7 @@
 
 class Example {
 public:
-	Example() 
-	{}
+	Example() {}
 	void add(const std::string& s)
 	{
 		mS.push_back(s);

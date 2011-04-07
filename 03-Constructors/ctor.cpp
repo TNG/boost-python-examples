@@ -3,15 +3,16 @@
 
 struct Ctor
 {
-    Ctor(std::string msg) 
-		: msg(msg) {}
+    Ctor(std::string msg) : mMsg(msg) {}
 	Ctor(double x,double y) 
-		{ std::stringstream os; os << x << ":" << y << std::ends; set(os.str()); }
-    void set(std::string msg) 
-		{ this->msg = msg; }
-    std::string greet() 
-		{ return msg; }
-    std::string msg;
+		{ 
+			std::stringstream os; 
+			os << x << ":" << y << std::ends; 
+			set(os.str()); 
+	}
+    void set(std::string msg) { mMsg = msg; }
+    std::string greet() { return mMsg; }
+    std::string mMsg;
 };
 
 #include <boost/python.hpp>

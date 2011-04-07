@@ -6,10 +6,7 @@ public:
 	Example() 
 	{}
 
-	void doit()
-	{ 
-		mS = "void"; 
-	}
+	void doit() { mS = "void"; }
 	std::string doit(unsigned int i)
 	{ 
 		std::stringstream s; 
@@ -17,10 +14,7 @@ public:
 		mS = s.str(); 
 		return mS;
 	}
-	void doit(std::string s)
-	{ 
-		mS = s;
-	}
+	void doit(std::string s) { mS = s; }
 
 	int makeIt(std::string s, int n=1, std::string t="")
 	{ 
@@ -31,8 +25,7 @@ public:
 		return n + ( t.size() > 0 ? 1 : 0 );
 	}
 	
-	std::string print() const
-	{ return mS; }	
+	std::string print() const { return mS; }	
 private:
 	std::string mS;
 };
