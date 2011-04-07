@@ -20,3 +20,8 @@ The examples should work on Linux, Windows and Mac, but currently have been test
 + create a build directory, e.g. directly in the project directory and cd to it: `mkdir build ; cd build`
 + run `cmake ..` and afterwards `make`
 
+Alternatively, run the provided `build.sh` script.
+
+## Tests
+
+All examples contain tests, but these only try to run the examples without checking the output. Their purpose is mainly to make sure that compilation works and produces valid Python modules.
