@@ -7,12 +7,19 @@ Others are independent.
 
 ## Prerequisites
 
+### general
 + [CMake](http://www.cmake.org "CMake project page") (>= 2.8.3)
 + [Boost](http://www.boost.org/ "Boost project page") (tested with 1.4.2, but should work with >= 1.3.2)
 + [Python](http://www.python.org "Python home page") (tested with 2.7, but should work with >= 2.2)
 + a C++ compiler for your platform, e.g. [GCC](http://gcc.gnu.org "GCC home") or [MinGW](http://www.mingw.org "Minimalist GNU for Windows")
 
-The examples should work on Linux, Windows and Mac, but currently have been tested under Linux only.
+The examples should work on Linux, Windows and Mac, but currently have not bee tested under Windows.
+
+### Mac OS X with [homebrew](http://brew.sh)
+
+There is a special package needed called boost-python. The standard boost package will not be recognized by cmake. 
+
++ `brew install cmake boost-python`
 
 ## Building
 
