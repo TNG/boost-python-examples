@@ -1,5 +1,5 @@
-#include <iostream>
 #include <boost/python.hpp>
+#include <iostream>
 #include "myextension.hpp"
 
 using namespace boost::python;

@@ -1,4 +1,5 @@
 
+#include <boost/python.hpp>
 #include <string>
 
 struct World
@@ -8,7 +9,6 @@ struct World
     std::string mMsg;
 };
 
-#include <boost/python.hpp>
 using namespace boost::python;
 
 BOOST_PYTHON_MODULE(classes)

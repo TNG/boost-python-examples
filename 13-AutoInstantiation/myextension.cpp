@@ -1,7 +1,7 @@
 
+#include <boost/python.hpp>
 #include "myextension.hpp"
 
-#include <boost/python.hpp>
 using namespace boost::python;
 
 BOOST_PYTHON_MODULE(myextension)

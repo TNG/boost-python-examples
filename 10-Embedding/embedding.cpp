@@ -1,5 +1,5 @@
-#include <iostream>
 #include <boost/python.hpp>
+#include <iostream>
 #include <frameobject.h>
 #include "mymodule.hpp"
 
