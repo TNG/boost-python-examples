@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
-#FIND_PACKAGE(PythonInterp)
+set(Python_ADDITIONAL_VERSIONS 2.7 2.6 2.5)
+FIND_PACKAGE(PythonInterp)
 FIND_PACKAGE(PythonLibs)
 FIND_PACKAGE(Boost COMPONENTS python)
 
