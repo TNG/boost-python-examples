@@ -13,7 +13,7 @@ Others are independent.
 + [Python](http://www.python.org "Python home page") (tested with 2.7, but should work with >= 2.2)
 + a C++ compiler for your platform, e.g. [GCC](http://gcc.gnu.org "GCC home") or [MinGW](http://www.mingw.org "Minimalist GNU for Windows")
 
-The examples should work on Linux, Windows and Mac, but currently have not bee tested under Windows.
+The examples should work on Linux, Windows and Mac, but currently have not been tested under Windows.
 
 ### Mac OS X with [homebrew](http://brew.sh)
 
@@ -21,7 +21,7 @@ There is a special package needed called boost-python. The standard boost packag
 
 + `brew install cmake boost-python`
 
-Furthermore, for the homebrew python lib to be used, unfortunately, the full path has to be given right now.
+Furthermore, for the homebrew python lib to be used, unfortunately the full path has to be given:
 
     cmake -DPYTHON_LIBRARY=/usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib ..
 
