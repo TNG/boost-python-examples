@@ -21,6 +21,10 @@ There is a special package needed called boost-python. The standard boost packag
 
 + `brew install cmake boost-python`
 
+Furthermore, for the homebrew python lib to be used, unfortunately, the full path has to be given right now.
+
+    cmake -DPYTHON_LIBRARY=/usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib ..
+
 ## Building
 
 + Set the `BOOST_ROOT` environment variable if Boost is installed in a non-standard directory
