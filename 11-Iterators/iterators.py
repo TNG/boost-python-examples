@@ -9,5 +9,5 @@ e.add("a")
 e.add("b")
 e.add("c")
 
-print [ s for s in e.strings() ]
+print ([ s for s in e.strings() ])
 

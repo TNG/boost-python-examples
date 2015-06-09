@@ -4,11 +4,19 @@
 
 using namespace boost::python;
 
+#if PY_MAJOR_VERSION >= 3
+#   define INIT_MODULE PyInit_myextension
+    extern "C" PyObject* INIT_MODULE();
+#else
+#   define INIT_MODULE initmyextension
+    extern "C" void INIT_MODULE();
+#endif
+
 int main(int argc, char** argv)
 {
 	try {
-		Py_Initialize();
-		PyImport_AppendInittab((char*)"myextension", initmyextension);
+		PyImport_AppendInittab((char*)"myextension", INIT_MODULE);
+        Py_Initialize();
 		object main_module = import("__main__");
 		dict main_namespace = extract<dict>(main_module.attr("__dict__"));
 		object myextension = import("myextension");

@@ -4,6 +4,6 @@ import classes
 
 t = classes.World()
 t.set("bom dia!")
-print t.greet()
+print (t.greet())
 
 
