@@ -36,3 +36,20 @@ Alternatively, run the provided `build.sh` script.
 ## Tests
 
 All examples contain tests, but these only try to run the examples without checking the output. Their purpose is mainly to make sure that compilation works and produces valid Python modules.
+
+## Python 3
+
+The code works with PYthon3 both on Linux and on OS X. However, there is an astonshing number of loops to hop through.
+
+### Linux
+
++ Build Boost::Python against Python 3 (needs at least version 1.56.0)
++ make sure `python` resolves to python3 (e.g., by using a python3 VE)
++ run `cmake -DBOOST_ROOT=xxx ..`
+
+### OS X (again with homebrew)
+
++ Build Boost::Python against Python 3 (needs at least version 1.56.0)
++ make sure `python` resolves to python3 (e.g., by using a python3 VE)
++ run `cmake -DBOOST_ROOT=xxx -DPYTHON_LIBRARY=xxx -DPYTHON_INCLUDE_DIR=xxx ..`
++ set DYLD_LIBRARY_PATH to the directory where the boost::python shared library resides before `make test`
