@@ -3,7 +3,7 @@
 from myexceptions import someFunction
 
 try:
-	someFunction()
+    someFunction()
 except UserWarning as ex:
-	print ("Exception %s caught: \"%s\""%(type(ex),ex))
+    print ("Exception %s caught: \"%s\""%(type(ex),ex))
 
