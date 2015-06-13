@@ -10,3 +10,4 @@ n0 = NumberLike()
 m0 = n0 + 1
 print (m0)
 
+print (repr(m0))
