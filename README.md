@@ -39,7 +39,7 @@ All examples contain tests, but these only try to run the examples without check
 
 ## Python 3
 
-The code works with PYthon3 both on Linux and on OS X. However, there is an astonshing number of loops to hop through.
+The code works with PYthon3 both on Linux and on OS X. However, there is an astonishing number of loops to hop through.
 
 ### Linux
 
