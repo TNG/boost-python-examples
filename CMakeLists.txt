@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
 FIND_PACKAGE(PythonInterp "3")
-FIND_PACKAGE(PythonLibs"3")
+FIND_PACKAGE(PythonLibs "3")
 FIND_PACKAGE(Boost COMPONENTS python)
 
 ENABLE_TESTING()
