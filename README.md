@@ -21,7 +21,7 @@ There is a special package needed called boost-python. The standard boost packag
 
 + `brew install cmake boost-python`
 
-Furthermore, for the homebrew python lib to be used, unfortunately the full path has to be given:
+Furthermore, for the homebrew python lib to be used, its path must be provided to cmake. This is handled in the `build.sh` script, but for reference and if any issues arise, that can be done manually as follows (substitute the path as appropriate for your Python version):
 
     cmake -DPYTHON_LIBRARY=/usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib ..
 
@@ -39,7 +39,7 @@ All examples contain tests, but these only try to run the examples without check
 
 ## Python 3
 
-The code works with PYthon3 both on Linux and on OS X. However, there is an astonshing number of loops to hop through.
+The code works with Python3 both on Linux and on OS X. However, there are several caveats.
 
 ### Linux
 
@@ -50,6 +50,6 @@ The code works with PYthon3 both on Linux and on OS X. However, there is an asto
 ### OS X (again with homebrew)
 
 + Build Boost::Python against Python 3 (needs at least version 1.56.0)
-+ make sure `python` resolves to python3 (e.g., by using a python3 VE)
++ make sure `python` resolves to python3 (e.g., by using virtualenv)
 + run `cmake -DBOOST_ROOT=xxx -DPYTHON_LIBRARY=xxx -DPYTHON_INCLUDE_DIR=xxx ..`
 + set DYLD_LIBRARY_PATH to the directory where the boost::python shared library resides before `make test`
