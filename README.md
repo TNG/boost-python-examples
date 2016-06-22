@@ -51,5 +51,5 @@ The code works with Python 3 both on Linux and on OS X. However, there are sever
 
 + Build Boost::Python against Python 3 (needs at least version 1.56.0)
 + make sure `python` resolves to python3 (e.g., by using virtualenv)
-+ run `cmake -DBOOST_ROOT=xxx -DPYTHON_LIBRARY=xxx -DPYTHON_INCLUDE_DIR=xxx ..`
-+ set DYLD_LIBRARY_PATH to the directory where the boost::python shared library resides before `make test`
++ run `cmake -DPYTHON_LIBRARY=xxx -DPYTHON_INCLUDE_DIR=xxx ..` (automated in `build.sh`)
++ in `CMakeLists.txt` make sure that line FIND_PACKAGE(Boost COMPONENTS python) is changed to FIND_PACKAGE(Boost COMPONENTS python3)
