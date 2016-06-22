@@ -49,7 +49,7 @@ The code works with Python 3 both on Linux and on OS X. However, there are sever
 
 ### OS X (again with homebrew)
 
-Some effort has been made to make Python 3 compilation automatic, by making modifications to `build.sh` and `CMakeLists.txt` that account for quirks on the Apple platform regarding cmake, paths, and naming conventions for python/python3. If you use `build.sh`, then you will need to do the following:
+Some effort has been made to make Python 3 compilation automatic, by making modifications to `build.sh` and `CMakeLists.txt` that account for quirks on the Apple platform regarding cmake, paths, and naming conventions for python/python3. Having said that, if you use `build.sh`, then you will still need to do the following:
 
 + Build Boost::Python against Python 3 (needs at least version 1.56.0)
 + make sure `python` resolves to python3 (e.g., by using virtualenv)
