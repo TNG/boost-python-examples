@@ -21,7 +21,7 @@ There is a special package needed called boost-python. The standard boost packag
 
 + `brew install cmake boost-python`
 
-Furthermore, for the homebrew python lib to be used, its path must be provided to cmake. This is handled in the `build.sh` script, but for reference and if any issues arise, that can be done manually as follows (substitute the path as appropriate for your Python version):
+Furthermore, for the homebrew python lib to be used, its path must be provided to cmake. This is handled in the `build.sh` script, but for reference, or if any issues arise, that can be done manually as follows (substitute the path as appropriate for your Python version):
 
     cmake -DPYTHON_LIBRARY=/usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib ..
 
@@ -49,7 +49,12 @@ The code works with Python 3 both on Linux and on OS X. However, there are sever
 
 ### OS X (again with homebrew)
 
+Some effort has been made to make Python 3 compilation automatic, by making modifications to `build.sh` and `CMakeLists.txt` that account for quirks on the Apple platform regarding cmake, paths, and naming conventions for python/python3. If you use `build.sh`, then you will need to do the following:
+
 + Build Boost::Python against Python 3 (needs at least version 1.56.0)
 + make sure `python` resolves to python3 (e.g., by using virtualenv)
-+ run `cmake -DPYTHON_LIBRARY=xxx -DPYTHON_INCLUDE_DIR=xxx ..` (automated in `build.sh`)
-+ in `CMakeLists.txt` make sure that line `FIND_PACKAGE(Boost COMPONENTS python)` is changed to `FIND_PACKAGE(Boost COMPONENTS python3)`
+
+If you are building without `build.sh`, then you will additionally need to:
+
++ run `cmake -DBOOST_ROOT=xxx -DPYTHON_LIBRARY=xxx -DPYTHON_INCLUDE_DIR=xxx ..`
++ As of the time of this writing, the naming convention is that python2 is called "python" and python3 is called "python3" on the Apple platform. Therefore, in `CMakeLists.txt` verify that the line `FIND_PACKAGE(Boost COMPONENTS python)` is changed to `FIND_PACKAGE(Boost COMPONENTS python3)`.
