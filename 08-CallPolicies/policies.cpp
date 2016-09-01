@@ -5,15 +5,15 @@ class Example {
     Example(std::string n) : mName(n) {}
     std::string mName;
 public:
-    std::string name() { return mName; }
+    std::string name() const { return mName; }
     static Example* factory()
     {
         return new Example("factory");
     }
     static Example* singleton()
     {
-        static Example* instance = new Example("singleton");
-        return instance;
+        static Example instance = Example("singleton");
+        return &instance;
     }
 };
 
