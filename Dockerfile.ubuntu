@@ -1,0 +1,11 @@
+FROM ubuntu:16.04
+RUN apt-get update && apt-get install -y libboost-all-dev python-dev git cmake g++ gdb python-dbg libboost-dbg
+RUN mkdir /work
+VOLUME /work/src
+WORKDIR /work
+RUN git clone https://github.com/TNG/boost-python-examples.git src && ./build.sh || true
+#
+# alternatively to the last RUN, one can share the source with the host system:
+#   docker build -t bp:latest . 
+#   docker run -t -i -v $PWD:/work/src bp:latest
+#   mkdir build && cd build && cmake ../src && make && make test
