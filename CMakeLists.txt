@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 FIND_PACKAGE(PythonInterp)
 FIND_PACKAGE(PythonLibs)
-if(APPLE AND ${PYTHON_VERSION_MAJOR} EQUAL 3)
+if (${PYTHON_VERSION_MAJOR} EQUAL 3)
     FIND_PACKAGE(Boost COMPONENTS python3)
 else()
     FIND_PACKAGE(Boost COMPONENTS python)
