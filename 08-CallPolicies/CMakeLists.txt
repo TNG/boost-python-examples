@@ -1,5 +1,5 @@
 
 PYTHON_ADD_MODULE(policies policies.cpp)
 FILE(COPY policies.py DESTINATION .)
-ADD_TEST(08-CallPolicies policies.py)
+ADD_TEST(NAME 08-CallPolicies COMMAND ${PYTHON_EXECUTABLE} policies.py)
 
