@@ -6,7 +6,7 @@ cd ${0%%$(basename $0)}
 mkdir build
 cd build
 
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
+if [[ "$OSTYPE" == "linux-gnu" || "$OSTYPE" == "linux" ]]; then
     cmake -DCMAKE_BUILD_TYPE=DEBUG .. && make && make test
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     PYTHON_VERSION=`python -c "import sys;t='{v[0]}.{v[1]}'.format(v=list(sys.version_info[:2]));sys.stdout.write(t)";`
