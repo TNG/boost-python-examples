@@ -1,8 +1,20 @@
 cmake_minimum_required(VERSION 2.8.3)
 
-FIND_PACKAGE(Boost COMPONENTS python3)
-FIND_PACKAGE(PythonInterp 3)
-FIND_PACKAGE(PythonLibs 3 REQUIRED)
+FIND_PACKAGE(PythonInterp)
+
+if (PYTHONINTERP_FOUND)
+    if (PYTHON_VERSION_MAJOR EQUAL 3)
+        FIND_PACKAGE(Boost COMPONENTS python3)
+        FIND_PACKAGE(PythonInterp 3)
+        FIND_PACKAGE(PythonLibs 3 REQUIRED)
+    else()
+        FIND_PACKAGE(Boost COMPONENTS python)
+        FIND_PACKAGE(PythonInterp)
+        FIND_PACKAGE(PythonLibs REQUIRED)
+    endif()
+else()
+    message("Python not found")
+endif()
 
 message(STATUS "PYTHON_LIBRARIES = ${PYTHON_LIBRARIES}")
 message(STATUS "PYTHON_EXECUTABLE = ${PYTHON_EXECUTABLE}")
