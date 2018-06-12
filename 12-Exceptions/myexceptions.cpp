@@ -17,5 +17,5 @@ BOOST_PYTHON_MODULE(myexceptions)
 {
     register_exception_translator<OutOfSteakException>(translateException);
 
-    def("someFunction", someFunction);
+    def("someFunction", &someFunction);
 }
