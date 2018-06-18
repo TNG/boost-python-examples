@@ -9,11 +9,11 @@ Others are independent.
 
 ### general
 + [CMake](http://www.cmake.org "CMake project page") (>= 2.8.3)
-+ [Boost](http://www.boost.org/ "Boost project page") (tested with 1.4.2, but should work with >= 1.3.2)
-+ [Python](http://www.python.org "Python home page") (tested with 2.7, but should work with >= 2.2)
++ [Boost](http://www.boost.org/ "Boost project page") (tested with 1.67, but should work with >= 1.3.2)
++ [Python](http://www.python.org "Python home page") (tested with 2.7 and 3.6, but should work with >= 2.2)
 + a C++ compiler for your platform, e.g. [GCC](http://gcc.gnu.org "GCC home") or [MinGW](http://www.mingw.org "Minimalist GNU for Windows")
 
-The examples should work on Linux, Windows and Mac, but currently have not been tested under Windows.
+The examples should work on Linux, Windows and OSX, but currently [have not been tested much under Windows](https://github.com/TNG/boost-python-examples/issues/10#issuecomment-326828479).
 
 ### Mac OS X with [homebrew](http://brew.sh)
 
@@ -45,16 +45,16 @@ The code works with Python 3 both on Linux and on OS X. However, there are sever
 
 + Build Boost::Python against Python 3 (needs at least version 1.56.0)
 + make sure `python` resolves to python3 (e.g., by using a python3 VE)
-+ run `cmake -DBOOST_ROOT=xxx ..`
++ run `./build.sh`
 
 ### OS X (again with homebrew)
 
 Some effort has been made to make Python 3 compilation automatic, by making modifications to `build.sh` and `CMakeLists.txt` that account for quirks on the Apple platform regarding cmake, paths, and naming conventions for python/python3. Having said that, if you use `build.sh`, then you will still need to do the following:
 
-+ Build Boost::Python against Python 3 (needs at least version 1.56.0)
++ Build Boost::Python against Python 3 (needs at least version 1.56.0) or `brew install boost-python3`
 + make sure `python` resolves to python3 (e.g., by using virtualenv)
++ check that `cmake` uses matching python interpreter and libraries (down to the last digit). Otherwise you run into [#17](https://github.com/TNG/boost-python-examples/issues/17).
 
 If you are building without `build.sh`, then you will additionally need to:
 
-+ run `cmake -DBOOST_ROOT=xxx -DPYTHON_LIBRARY=xxx -DPYTHON_INCLUDE_DIR=xxx ..`
-+ As of the time of this writing, the naming convention is that python2 is called "python" and python3 is called "python3" on the Apple platform. Therefore, in `CMakeLists.txt` verify that the line `FIND_PACKAGE(Boost COMPONENTS python)` is changed to `FIND_PACKAGE(Boost COMPONENTS python3)`.
++ run `cmake -DBOOST_LIBRARYDIR=xxx -DPYTHON_LIBRARY=xxx -DPYTHON_INCLUDE_DIR=xxx ..`
