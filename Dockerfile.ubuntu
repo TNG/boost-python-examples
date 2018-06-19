@@ -1,5 +1,5 @@
-FROM ubuntu:16.04
-RUN apt-get update && apt-get install -y libboost-all-dev python-dev git cmake g++ gdb python-dbg libboost-dbg
+FROM ubuntu:bionic
+RUN apt-get update && apt-get install -y libboost-all-dev python-dev git cmake g++ gdb python-dbg 
 RUN mkdir /work
 VOLUME /work/src
 WORKDIR /work
