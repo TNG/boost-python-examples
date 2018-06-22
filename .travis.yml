@@ -1,0 +1,20 @@
+language: cpp
+script: ./build.sh
+
+matrix:
+  include:
+    - os: linux
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - libboost-all-dev
+
+    - os: osx
+      osx_image: xcode9.2
+      env:
+        - PYTHON_EXECUTABLE: /usr/local/bin/python
+      before_install:
+        - brew update && brew bundle
+        - brew unlink python && brew install python@2

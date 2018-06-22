@@ -1,6 +1,8 @@
 
 # boost::python examples
 
+[![Build Status](https://travis-ci.org/TNG/boost-python-examples.svg?branch=master)](https://travis-ci.org/TNG/boost-python-examples)
+
 These are a few examples on how to use the boost::python library to extend Python with C++ libraries.
 Some of the are based on the [existing tutorial for boost::python from Joel de Guzman](http://www.boost.org/doc/libs/1_46_1/libs/python/doc/tutorial/doc/html/index.html "Boost.Python tutorial").
 Others are independent.
