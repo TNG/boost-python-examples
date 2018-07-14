@@ -60,3 +60,36 @@ Some effort has been made to make Python 3 compilation automatic, by making modi
 If you are building without `build.sh`, then you will additionally need to:
 
 + run `cmake -DBOOST_LIBRARYDIR=xxx -DPYTHON_LIBRARY=xxx -DPYTHON_INCLUDE_DIR=xxx ..`
+
+## Contributing
+
+Contributions are very welcome. The following will provide some helpful guidelines.
+
+### How to contribute
+
+If you want to submit a contribution, please follow the following workflow:
+
+* Fork the project
+* Create a feature branch
+* Add your contribution
+* When you're completely done, build the project and run all tests
+* Create a Pull Request
+
+### Commits
+
+Commit messages should be clear and fully elaborate the context and the reason of a change.
+If your commit refers to an issue, please post-fix it with the issue number, e.g.
+
+```
+Issue: #123
+```
+
+Furthermore, commits should be signed (`git commit -s`) according to the [DCO](DCO.md).
+
+### Pull Requests
+
+If your Pull Request resolves an issue, please add a respective line to the end, like
+
+```
+Resolves #123
+```
