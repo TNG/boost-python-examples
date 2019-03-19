@@ -1,7 +1,7 @@
-
 # boost::python examples
 
 [![Build Status](https://travis-ci.org/TNG/boost-python-examples.svg?branch=master)](https://travis-ci.org/TNG/boost-python-examples)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FTNG%2Fboost-python-examples.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FTNG%2Fboost-python-examples?ref=badge_shield)
 
 These are a few examples on how to use the boost::python library to extend Python with C++ libraries.
 Some of the are based on the [existing tutorial for boost::python from Joel de Guzman](http://www.boost.org/doc/libs/1_46_1/libs/python/doc/tutorial/doc/html/index.html "Boost.Python tutorial").
@@ -93,3 +93,7 @@ If your Pull Request resolves an issue, please add a respective line to the end,
 ```
 Resolves #123
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FTNG%2Fboost-python-examples.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FTNG%2Fboost-python-examples?ref=badge_large)
