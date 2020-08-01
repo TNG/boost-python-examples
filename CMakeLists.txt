@@ -1,11 +1,20 @@
 cmake_minimum_required(VERSION 2.8.3)
 
+project(
+  "boost-python-example"
+  LANGUAGES CXX
+)
+
 FIND_PACKAGE(PythonInterp)
 
 if (PYTHONINTERP_FOUND)
   if (UNIX AND NOT APPLE)
     if (PYTHON_VERSION_MAJOR EQUAL 3)
         FIND_PACKAGE(Boost COMPONENTS python${PYTHON_VERSION_SUFFIX})
+        if (NOT Boost_FOUND)
+          # look for python in the form of python38
+          FIND_PACKAGE(Boost COMPONENTS python${PYTHON_VERSION_MAJOR}${PYTHON_VERSION_MINOR} REQUIRED)
+        endif()
         FIND_PACKAGE(PythonInterp 3)
         FIND_PACKAGE(PythonLibs 3 REQUIRED)
     else()
